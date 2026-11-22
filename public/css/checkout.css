@@ -1,0 +1,256 @@
+
+/* =================================
+   SMART MART CHECKOUT
+================================= */
+
+:root {
+    --checkout-bg: #f6f8fb;
+    --checkout-text: #20252d;
+    --checkout-muted: #6b7280;
+    --checkout-border: #e5e7eb;
+    --checkout-accent: #198754;
+    --checkout-accent-dark: #146c43;
+    --checkout-radius: 16px;
+}
+
+body {
+    background-color: var(--checkout-bg);
+    color: var(--checkout-text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+.checkout-wrap {
+    max-width: 1140px;
+}
+
+/* Brand header */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--checkout-text);
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--checkout-accent);
+}
+
+.secure-checkout {
+    white-space: nowrap;
+}
+
+/* Cards */
+
+.checkout-box {
+    background: #fff;
+    border: 1px solid var(--checkout-border) !important;
+    border-radius: var(--checkout-radius);
+    overflow: hidden;
+}
+
+.shadow-sm {
+    box-shadow: 0 5px 24px rgba(15, 23, 42, 0.045) !important;
+}
+
+.order-summary {
+    position: sticky;
+    top: 24px;
+}
+
+/* Form controls */
+
+.form-label {
+    color: #374151;
+    font-size: 0.92rem;
+}
+
+.form-control {
+    min-height: 48px;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #dfe3e8;
+    border-radius: 9px;
+    background-color: #fff;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    border-color: var(--checkout-accent);
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.12);
+}
+
+/* Payment options */
+
+.payment-option {
+    position: relative;
+    min-height: 88px;
+    border: 1px solid var(--checkout-border);
+    border-radius: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: #a7d5ba;
+    background-color: #fbfefc;
+}
+
+.payment-option:has(input:checked) {
+    border-color: var(--checkout-accent);
+    background-color: #f2faf5;
+    box-shadow: 0 0 0 1px var(--checkout-accent);
+}
+
+.payment-option:focus-within {
+    outline: 2px solid rgba(25, 135, 84, 0.35);
+    outline-offset: 2px;
+}
+
+.payment-option .form-check-input {
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+    accent-color: var(--checkout-accent);
+}
+
+.payment-option .form-check-input:checked {
+    background-color: var(--checkout-accent);
+    border-color: var(--checkout-accent);
+}
+
+.payment-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+}
+
+/* Buttons */
+
+.place-order {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #171717;
+    border-radius: 10px;
+    background-color: #171717;
+    color: #fff;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.place-order:hover,
+.place-order:focus-visible {
+    background-color: #303030;
+    border-color: #303030;
+    color: #fff;
+}
+
+.place-order:active {
+    transform: translateY(1px);
+}
+
+.place-order:focus-visible {
+    outline: 3px solid rgba(25, 135, 84, 0.35);
+    outline-offset: 2px;
+}
+
+/* Product summary */
+
+.product-img {
+    display: block;
+    flex-shrink: 0;
+    width: 68px;
+    height: 76px;
+    object-fit: cover;
+    border: 1px solid #edf0f2;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.product-img-placeholder {
+    width: 68px;
+}
+
+.product-name {
+    overflow-wrap: anywhere;
+    font-size: 0.94rem;
+    line-height: 1.4;
+}
+
+.summary-note {
+    background-color: #f5f8f6;
+    border: 1px solid #e5eee8;
+}
+
+/* Validation */
+
+.alert {
+    border-radius: 10px;
+    font-size: 0.92rem;
+}
+
+/* Footer */
+
+footer {
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 991.98px) {
+    .order-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .checkout-wrap {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .checkout-box .card-body {
+        padding: 1.25rem !important;
+    }
+
+    .payment-option {
+        gap: 0.7rem !important;
+        padding: 0.85rem !important;
+    }
+
+    .payment-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .product-img {
+        width: 54px;
+        height: 64px;
+    }
+
+    .product-img-placeholder {
+        width: 54px;
+    }
+
+    .secure-checkout {
+        font-size: 0.75rem !important;
+    }
+}
